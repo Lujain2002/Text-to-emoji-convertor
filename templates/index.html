@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Converter</title>
+    
+</head>
+<style>
+    body {
+    background-color: #181818;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background-color: #252525;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-around;
+   
+    
+}
+
+h1 {
+    color: #FFD700;
+}
+
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #FFD700;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 50%;
+}
+
+button:hover {
+    background-color: #E6C200;
+}
+
+.output {
+    font-size: 24px;
+    margin-top: 10px;
+    margin-left: -150px;
+}
+.result{
+    display: flex;
+    justify-content: space-between;
+   
+
+}
+
+</style>
+<body>
+    <h1>Convert Words to Emojis 🤩</h1>
+    <div class="container">
+    <div class="left">
+        
+        <form method="POST">
+            <div class="result">
+            <input type="text" name="text" placeholder="Enter text..." value="{{ user_text }}" required>
+            <p class="equal">=</p>
+            </div>
+            <button type="submit">Convert</button>
+        </form>
+    </div>
+    <div class=" right">
+        {% if emoji_text %}
+            <p class="output">{{ emoji_text }}</p>
+        {% endif %}
+    </div>
+    </div>
+</body>
+</html>
